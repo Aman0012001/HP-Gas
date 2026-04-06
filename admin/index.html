@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gas Booking Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-indigo-600 text-white py-4 shadow-md">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold"><i class="fas fa-gas-pump mr-2"></i> Gas Booking Admin</h1>
+            <button onclick="exportToCSV()" class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded text-sm font-semibold transition">
+                <i class="fas fa-file-export mr-1"></i> Export CSV
+            </button>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <!-- Stats Row -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow border-l-4 border-indigo-500">
+                <p class="text-gray-500 text-sm uppercase font-semibold">Total Bookings</p>
+                <h3 id="total-count" class="text-3xl font-bold">0</h3>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow border-l-4 border-yellow-500">
+                <p class="text-gray-500 text-sm uppercase font-semibold">Pending</p>
+                <h3 id="pending-count" class="text-3xl font-bold">0</h3>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow border-l-4 border-green-500">
+                <p class="text-gray-500 text-sm uppercase font-semibold">Delivered</p>
+                <h3 id="delivered-count" class="text-3xl font-bold">0</h3>
+            </div>
+        </div>
+
+        <!-- Bookings Management -->
+        <div class="bg-white rounded-lg shadow overflow-hidden">
+            <div class="px-6 py-4 bg-gray-100 border-b flex justify-between items-center">
+                <h2 class="font-bold text-lg">Manage All Bookings</h2>
+                <input type="text" id="search-box" onkeyup="filterTable()" placeholder="Search mobile or consumer #..." class="px-3 py-1 border rounded text-sm w-64 outline-none focus:ring-2 focus:ring-indigo-500">
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left" id="bookings-table">
+                    <thead class="bg-gray-50 text-xs uppercase font-semibold text-gray-500 border-b">
+                        <tr>
+                            <th class="px-6 py-3">ID</th>
+                            <th class="px-6 py-3">User Email</th>
+                            <th class="px-6 py-3">Provider</th>
+                            <th class="px-6 py-3">Consumer #</th>
+                            <th class="px-6 py-3">Status</th>
+                            <th class="px-6 py-3">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bookings-body" class="divide-y divide-gray-100 text-sm">
+                        <!-- Data will be loaded here -->
+                        <tr><td colspan="6" class="px-6 py-8 text-center text-gray-400">Loading bookings...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const API_URL = "https://your-api.up.railway.app/api"; // Update with real URL
+        let allBookings = [];
+
+        async function fetchBookings() {
+            try {
+                const response = await fetch(`${API_URL}/admin/bookings/all`);
+                const data = await response.json();
+                if (data.success) {
+                    allBookings = data.bookings;
+                    renderTable(allBookings);
+                    updateStats(allBookings);
+                }
+            } catch (err) {
+                console.error("Failed to fetch bookings", err);
+                document.getElementById('bookings-body').innerHTML = `<tr><td colspan="6" class="px-6 py-8 text-center text-red-500">Error connecting to server. Check your API_URL.</td></tr>`;
+            }
+        }
+
+        function renderTable(bookings) {
+            const body = document.getElementById('bookings-body');
+            body.innerHTML = bookings.map(b => `
+                <tr class="hover:bg-gray-50">
+                    <td class="px-6 py-4 font-medium text-gray-900">#${b.id}</td>
+                    <td class="px-6 py-4">${b.user_email}</td>
+                    <td class="px-6 py-4">
+                        <span class="px-2 py-1 rounded text-xs font-bold ${getProviderClass(b.provider)}">${b.provider}</span>
+                    </td>
+                    <td class="px-6 py-4">${b.consumer_number}</td>
+                    <td class="px-6 py-4">
+                        <span id="status-${b.id}" class="px-2 py-1 rounded text-xs font-bold ${getStatusClass(b.status)}">${b.status}</span>
+                    </td>
+                    <td class="px-6 py-4">
+                        <select onchange="updateStatus(${b.id}, this.value)" class="text-xs border rounded px-1 py-1 outline-none">
+                            <option value="">Update Status</option>
+                            <option value="PENDING">PENDING</option>
+                            <option value="CONFIRMED">CONFIRMED</option>
+                            <option value="DELIVERED">DELIVERED</option>
+                            <option value="CANCELLED">CANCELLED</option>
+                        </select>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        async function updateStatus(bookingId, newStatus) {
+            if (!newStatus) return;
+            if (!confirm(`Change status of #${bookingId} to ${newStatus}?`)) return;
+
+            try {
+                const res = await fetch(`${API_URL}/admin/bookings/status`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ bookingId, status: newStatus })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    alert("Status updated!");
+                    fetchBookings(); // Refresh everything
+                }
+            } catch (err) { alert("Failed to update status"); }
+        }
+
+        function getStatusClass(status) {
+            switch(status) {
+                case 'DELIVERED': return 'bg-green-100 text-green-700';
+                case 'PENDING': return 'bg-yellow-100 text-yellow-700';
+                case 'CONFIRMED': return 'bg-blue-100 text-blue-700';
+                case 'CANCELLED': return 'bg-red-100 text-red-700';
+                default: return 'bg-gray-100 text-gray-700';
+            }
+        }
+
+        function getProviderClass(p) {
+            switch(p) {
+                case 'HP': return 'bg-blue-50 text-blue-600 border border-blue-200';
+                case 'INDIAN': return 'bg-orange-50 text-orange-600 border border-orange-200';
+                case 'BHARAT': return 'bg-indigo-50 text-indigo-600 border border-indigo-200';
+                default: return '';
+            }
+        }
+
+        function updateStats(bookings) {
+            document.getElementById('total-count').innerText = bookings.length;
+            document.getElementById('pending-count').innerText = bookings.filter(b => b.status === 'PENDING').length;
+            document.getElementById('delivered-count').innerText = bookings.filter(b => b.status === 'DELIVERED').length;
+        }
+
+        function filterTable() {
+            const query = document.getElementById('search-box').value.toLowerCase();
+            const filtered = allBookings.filter(b => 
+                b.consumer_number.toLowerCase().includes(query) || 
+                b.user_email.toLowerCase().includes(query)
+            );
+            renderTable(filtered);
+        }
+
+        function exportToCSV() {
+            if (allBookings.length === 0) return alert("No data to export");
+            const header = ["ID", "UserEmail", "Provider", "ConsumerNumber", "Status", "Date"];
+            const rows = allBookings.map(b => [b.id, b.user_email, b.provider, `="${b.consumer_number}"`, b.status, b.created_at]);
+            
+            let csvContent = "data:text/csv;charset=utf-8," + [header, ...rows].map(e => e.join(",")).join("\n");
+            const link = document.createElement("a");
+            link.setAttribute("href", encodeURI(csvContent));
+            link.setAttribute("download", `gas_bookings_${new Date().toLocaleDateString()}.csv`);
+            document.body.appendChild(link);
+            link.click();
+        }
+
+        // Init
+        fetchBookings();
+    </script>
+</body>
+</html>
