@@ -1,14 +1,30 @@
 [
     {
-        "merged": "com.gasbooking.app-mergeDebugResources-47:/layout/fragment_home.xml",
-        "source": "com.gasbooking.app-main-50:/layout/fragment_home.xml"
+        "merged": "com.gasbooking.app-mergeDebugResources-53:/layout/activity_main.xml",
+        "source": "com.gasbooking.app-main-56:/layout/activity_main.xml"
     },
     {
-        "merged": "com.gasbooking.app-mergeDebugResources-47:/layout/activity_main.xml",
-        "source": "com.gasbooking.app-main-50:/layout/activity_main.xml"
+        "merged": "com.gasbooking.app-mergeDebugResources-53:/layout/fragment_booking.xml",
+        "source": "com.gasbooking.app-main-56:/layout/fragment_booking.xml"
     },
     {
-        "merged": "com.gasbooking.app-mergeDebugResources-47:/layout/fragment_booking.xml",
-        "source": "com.gasbooking.app-main-50:/layout/fragment_booking.xml"
+        "merged": "com.gasbooking.app-mergeDebugResources-53:/layout/fragment_login.xml",
+        "source": "com.gasbooking.app-main-56:/layout/fragment_login.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-mergeDebugResources-53:/layout/fragment_history.xml",
+        "source": "com.gasbooking.app-main-56:/layout/fragment_history.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-mergeDebugResources-53:/layout/fragment_register.xml",
+        "source": "com.gasbooking.app-main-56:/layout/fragment_register.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-mergeDebugResources-53:/layout/fragment_home.xml",
+        "source": "com.gasbooking.app-main-56:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-mergeDebugResources-53:/layout/fragment_profile.xml",
+        "source": "com.gasbooking.app-main-56:/layout/fragment_profile.xml"
     }
 ]

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.gasbooking.app-mergeDebugResources-46:/values-en-rGB/values-en-rGB.xml",
+            "outputFile": "com.gasbooking.app-mergeDebugResources-52:/values-en-rGB/values-en-rGB.xml",
             "map": [
                 {
                     "source": "C:\\Users\\amanj\\.gradle\\caches\\transforms-3\\0da59ba91935cea8fd86def40d918b1b\\transformed\\navigation-ui-2.5.3\\res\\values-en-rGB\\values-en-rGB.xml",

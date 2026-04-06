@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.gasbooking.app-mergeDebugResources-46:/values-es-rUS/values-es-rUS.xml",
+            "outputFile": "com.gasbooking.app-mergeDebugResources-52:/values-es-rUS/values-es-rUS.xml",
             "map": [
                 {
                     "source": "C:\\Users\\amanj\\.gradle\\caches\\transforms-3\\1390ed0e93696117e0bd1340aa2458d6\\transformed\\appcompat-1.6.1\\res\\values-es-rUS\\values-es-rUS.xml",

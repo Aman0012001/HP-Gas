@@ -10,20 +10,20 @@ Daemon will be stopped at the end of the build
 > Task :app:dataBindingMergeDependencyArtifactsDebug
 > Task :app:generateDebugResources
 > Task :app:packageDebugResources
-> Task :app:mapDebugSourceSetPaths
 > Task :app:parseDebugLocalResources
-> Task :app:createDebugCompatibleScreenManifests
+> Task :app:mapDebugSourceSetPaths
 > Task :app:checkDebugAarMetadata
+> Task :app:createDebugCompatibleScreenManifests
 > Task :app:extractDeepLinksDebug
+> Task :app:mergeDebugResources
 
 > Task :app:processDebugMainManifest
 package="com.gasbooking.app" found in source AndroidManifest.xml: E:\hp booking\android\app\src\main\AndroidManifest.xml.
 Setting the namespace via the package attribute in the source AndroidManifest.xml is no longer supported, and the value is ignored.
 Recommendation: remove package="com.gasbooking.app" from the source AndroidManifest.xml: E:\hp booking\android\app\src\main\AndroidManifest.xml.
 
-> Task :app:mergeDebugResources
-> Task :app:processDebugManifest
 > Task :app:dataBindingGenBaseClassesDebug
+> Task :app:processDebugManifest
 > Task :app:javaPreCompileDebug
 > Task :app:mergeDebugShaders
 > Task :app:compileDebugShaders NO-SOURCE
@@ -32,72 +32,139 @@ Recommendation: remove package="com.gasbooking.app" from the source AndroidManif
 > Task :app:compressDebugAssets
 > Task :app:desugarDebugFileDependencies
 > Task :app:mergeDebugJniLibFolders
-> Task :app:checkDebugDuplicateClasses
 > Task :app:mergeDebugNativeLibs NO-SOURCE
 > Task :app:stripDebugDebugSymbols NO-SOURCE
-> Task :app:mergeLibDexDebug
+> Task :app:checkDebugDuplicateClasses
 > Task :app:validateSigningDebug
 > Task :app:writeDebugAppMetadata
 > Task :app:writeDebugSigningConfigVersions
+> Task :app:mergeLibDexDebug
 > Task :app:processDebugManifestForPackage
-> Task :app:processDebugResources FAILED
+> Task :app:processDebugResources
 > Task :app:mergeExtDexDebug
-java : 
+
+> Task :app:compileDebugKotlin FAILED
+java : e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/
+MainActivity.kt:13:17 Unresolved reference: work
 At line:1 char:5
 + & { java -Xmx2048m '-Dfile.encoding=UTF-8' -classpath 'gradle\wrapper ...
 +     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + CategoryInfo          : NotSpecified: (e: file:///E:/h...reference: work 
+   :String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError
  
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/MainAct
+ivity.kt:14:17 Unresolved reference: work
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/MainAct
+ivity.kt:15:17 Unresolved reference: work
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/MainAct
+ivity.kt:39:31 Unresolved reference: R
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/MainAct
+ivity.kt:44:35 Unresolved reference: R
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/MainAct
+ivity.kt:44:75 Unresolved reference: R
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/MainAct
+ivity.kt:52:35 None of the following functions can be called with the 
+arguments supplied: 
+public inline fun AppBarConfiguration(topLevelMenu: Menu, drawerLayout: 
+Openable? = ..., noinline fallbackOnNavigateUpListener: () -> Boolean = ...): 
+AppBarConfiguration defined in androidx.navigation.ui
+public inline fun AppBarConfiguration(navGraph: NavGraph, drawerLayout: 
+Openable? = ..., noinline fallbackOnNavigateUpListener: () -> Boolean = ...): 
+AppBarConfiguration defined in androidx.navigation.ui
+public inline fun AppBarConfiguration(topLevelDestinationIds: Set<Int>, 
+drawerLayout: Openable? = ..., noinline fallbackOnNavigateUpListener: () -> 
+Boolean = ...): AppBarConfiguration defined in androidx.navigation.ui
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/MainAct
+ivity.kt:53:19 Unresolved reference: R
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/MainAct
+ivity.kt:53:38 Unresolved reference: R
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/MainAct
+ivity.kt:53:60 Unresolved reference: R
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/MainAct
+ivity.kt:56:9 Overload resolution ambiguity: 
+public fun AppCompatActivity.setupActionBarWithNavController(navController: 
+NavController, drawerLayout: DrawerLayout?): Unit defined in 
+androidx.navigation.ui
+public fun AppCompatActivity.setupActionBarWithNavController(navController: 
+NavController, configuration: AppBarConfiguration = ...): Unit defined in 
+androidx.navigation.ui
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/MainAct
+ivity.kt:75:27 Unresolved reference: PeriodicWorkRequestBuilder
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/MainAct
+ivity.kt:79:9 Unresolved reference: WorkManager
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/MainAct
+ivity.kt:81:13 Unresolved reference: ExistingPeriodicWorkPolicy
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/ui/auth
+/LoginFragment.kt:13:39 Unresolved reference: FragmentLoginBinding
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/ui/auth
+/LoginFragment.kt:19:27 Unresolved reference: FragmentLoginBinding
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/ui/auth
+/LoginFragment.kt:27:20 Unresolved reference: FragmentLoginBinding
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/ui/auth
+/LoginFragment.kt:52:82 Variable expected
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/ui/auth
+/LoginFragment.kt:54:45 Variable expected
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/ui/auth
+/LoginFragment.kt:58:45 Variable expected
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/ui/auth
+/LoginFragment.kt:61:49 Variable expected
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/ui/book
+ing/BookingFragment.kt:91:49 Unresolved reference: message
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/ui/book
+ing/BookingFragment.kt:96:55 Unresolved reference: message
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/ui/hist
+ory/HistoryFragment.kt:14:39 Unresolved reference: FragmentHistoryBinding
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/ui/hist
+ory/HistoryFragment.kt:21:27 Unresolved reference: FragmentHistoryBinding
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/ui/hist
+ory/HistoryFragment.kt:29:20 Unresolved reference: FragmentHistoryBinding
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/ui/hist
+ory/HistoryFragment.kt:36:27 Variable expected
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/ui/hist
+ory/HistoryFragment.kt:45:85 Variable expected
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/ui/hist
+ory/HistoryFragment.kt:47:45 Variable expected
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/ui/hist
+ory/HistoryFragment.kt:48:43 Variable expected
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/ui/hist
+ory/HistoryFragment.kt:51:45 Variable expected
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/worker/
+SyncWorker.kt:4:17 Unresolved reference: work
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/worker/
+SyncWorker.kt:5:17 Unresolved reference: work
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/worker/
+SyncWorker.kt:13:44 Unresolved reference: WorkerParameters
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/worker/
+SyncWorker.kt:13:64 Unresolved reference: CoroutineWorker
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/worker/
+SyncWorker.kt:15:5 'doWork' overrides nothing
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/worker/
+SyncWorker.kt:15:36 One type argument expected for class Result<out T>
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/worker/
+SyncWorker.kt:16:39 Unresolved reference: applicationContext
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/worker/
+SyncWorker.kt:19:51 Not enough information to infer type variable T
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/worker/
+SyncWorker.kt:19:58 No value passed for parameter 'value'
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/worker/
+SyncWorker.kt:21:48 Unresolved reference: applicationContext
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/worker/
+SyncWorker.kt:40:31 Not enough information to infer type variable T
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/worker/
+SyncWorker.kt:40:38 No value passed for parameter 'value'
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/worker/
+SyncWorker.kt:43:31 Unresolved reference: retry
+e: file:///E:/hp%20booking/android/app/src/main/java/com/gasbooking/app/worker/
+SyncWorker.kt:47:27 Unresolved reference: retry
+
 FAILURE: Build failed with an exception.
 
 * What went wrong:
-Execution failed for task ':app:processDebugResources'.
-> A failure occurred while executing com.android.build.gradle.internal.res.Link
-ApplicationAndroidResourcesTask$TaskAction
-   > Android resource linking failed
-     
-com.gasbooking.app-mergeDebugResources-47:/layout/fragment_booking.xml:30: 
-error: resource drawable/ic_person (aka com.gasbooking.app:drawable/ic_person) 
-not found.
-     
-com.gasbooking.app-mergeDebugResources-47:/layout/fragment_booking.xml:46: 
-error: resource drawable/ic_phone (aka com.gasbooking.app:drawable/ic_phone) 
-not found.
-     
-com.gasbooking.app-mergeDebugResources-47:/layout/fragment_booking.xml:62: 
-error: resource drawable/ic_location (aka 
-com.gasbooking.app:drawable/ic_location) not found.
-     
-com.gasbooking.app-mergeDebugResources-47:/layout/fragment_booking.xml:80: 
-error: resource drawable/ic_numbers (aka 
-com.gasbooking.app:drawable/ic_numbers) not found.
-     com.gasbooking.app-mergeDebugResources-47:/layout/fragment_home.xml:21: 
-error: resource menu/top_menu (aka com.gasbooking.app:menu/top_menu) not found.
-     com.gasbooking.app-mergeDebugResources-47:/layout/fragment_home.xml:21: 
-error: resource drawable/ic_menu (aka com.gasbooking.app:drawable/ic_menu) not 
-found.
-     com.gasbooking.app-mergeDebugResources-47:/layout/fragment_home.xml:69: 
-error: resource drawable/logo_hp (aka com.gasbooking.app:drawable/logo_hp) not 
-found.
-     com.gasbooking.app-mergeDebugResources-47:/layout/fragment_home.xml:107: 
-error: resource drawable/logo_indian (aka 
-com.gasbooking.app:drawable/logo_indian) not found.
-     com.gasbooking.app-mergeDebugResources-47:/layout/fragment_home.xml:145: 
-error: resource drawable/logo_bharat (aka 
-com.gasbooking.app:drawable/logo_bharat) not found.
-     com.gasbooking.app-main-50:/menu/bottom_nav_menu.xml:6: error: resource 
-drawable/ic_home (aka com.gasbooking.app:drawable/ic_home) not found.
-     com.gasbooking.app-main-50:/menu/bottom_nav_menu.xml:10: error: resource 
-drawable/ic_history (aka com.gasbooking.app:drawable/ic_history) not found.
-     com.gasbooking.app-main-50:/menu/bottom_nav_menu.xml:14: error: resource 
-drawable/ic_person (aka com.gasbooking.app:drawable/ic_person) not found.
-     com.gasbooking.app-main-50:/mipmap/ic_launcher.xml: error: 
-<adaptive-icon> elements require a sdk version of at least 26.
-     com.gasbooking.app-main-50:/mipmap/ic_launcher_round.xml: error: 
-<adaptive-icon> elements require a sdk version of at least 26.
-     error: failed linking file resources.
-
+Execution failed for task ':app:compileDebugKotlin'.
+> A failure occurred while executing org.jetbrains.kotlin.compilerRunner.Gradle
+CompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
+   > Compilation error. See log for more details
 
 * Try:
 > Run with --stacktrace option to get the stack trace.
@@ -105,5 +172,5 @@ drawable/ic_person (aka com.gasbooking.app:drawable/ic_person) not found.
 > Run with --scan to get full insights.
 > Get more help at https://help.gradle.org.
 
-BUILD FAILED in 26s
-29 actionable tasks: 28 executed, 1 up-to-date
+BUILD FAILED in 46s
+30 actionable tasks: 29 executed, 1 up-to-date

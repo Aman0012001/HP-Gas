@@ -88,12 +88,12 @@ class BookingFragment : Fragment() {
                     is BookingViewModel.BookingState.Success -> {
                         binding.progressBar.visibility = View.GONE
                         binding.btnBook.isEnabled = true
-                        showSuccessDialog(state.message)
+                        showSuccessDialog(state.msg)
                     }
                     is BookingViewModel.BookingState.Error -> {
                         binding.progressBar.visibility = View.GONE
                         binding.btnBook.isEnabled = true
-                        Toast.makeText(context, state.message, Toast.LENGTH_LONG).show()
+                        Toast.makeText(context, state.msg, Toast.LENGTH_LONG).show()
                     }
                     else -> {}
                 }

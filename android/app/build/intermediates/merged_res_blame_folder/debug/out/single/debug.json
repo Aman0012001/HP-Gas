@@ -1,54 +1,118 @@
 [
     {
-        "merged": "com.gasbooking.app-merged_res-48:/navigation_nav_graph.xml.flat",
-        "source": "com.gasbooking.app-main-50:/navigation/nav_graph.xml"
+        "merged": "com.gasbooking.app-merged_res-54:/layout_fragment_profile.xml.flat",
+        "source": "com.gasbooking.app-main-56:/layout/fragment_profile.xml"
     },
     {
-        "merged": "com.gasbooking.app-merged_res-48:/mipmap_ic_launcher_round.xml.flat",
-        "source": "com.gasbooking.app-main-50:/mipmap/ic_launcher_round.xml"
+        "merged": "com.gasbooking.app-merged_res-54:/xml_backup_rules.xml.flat",
+        "source": "com.gasbooking.app-main-56:/xml/backup_rules.xml"
     },
     {
-        "merged": "com.gasbooking.app-merged_res-48:/xml_data_extraction_rules.xml.flat",
-        "source": "com.gasbooking.app-main-50:/xml/data_extraction_rules.xml"
+        "merged": "com.gasbooking.app-merged_res-54:/drawable_ic_numbers.xml.flat",
+        "source": "com.gasbooking.app-main-56:/drawable/ic_numbers.xml"
     },
     {
-        "merged": "com.gasbooking.app-merged_res-48:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.gasbooking.app-main-50:/drawable/ic_launcher_foreground.xml"
+        "merged": "com.gasbooking.app-merged_res-54:/drawable_logo_bharat.xml.flat",
+        "source": "com.gasbooking.app-main-56:/drawable/logo_bharat.xml"
     },
     {
-        "merged": "com.gasbooking.app-merged_res-48:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.gasbooking.app-main-50:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "com.gasbooking.app-merged_res-54:/drawable_logo_hp.xml.flat",
+        "source": "com.gasbooking.app-main-56:/drawable/logo_hp.xml"
     },
     {
-        "merged": "com.gasbooking.app-merged_res-48:/xml_backup_rules.xml.flat",
-        "source": "com.gasbooking.app-main-50:/xml/backup_rules.xml"
+        "merged": "com.gasbooking.app-merged_res-54:/navigation_nav_graph.xml.flat",
+        "source": "com.gasbooking.app-main-56:/navigation/nav_graph.xml"
     },
     {
-        "merged": "com.gasbooking.app-merged_res-48:/menu_bottom_nav_menu.xml.flat",
-        "source": "com.gasbooking.app-main-50:/menu/bottom_nav_menu.xml"
+        "merged": "com.gasbooking.app-merged_res-54:/drawable_ic_location.xml.flat",
+        "source": "com.gasbooking.app-main-56:/drawable/ic_location.xml"
     },
     {
-        "merged": "com.gasbooking.app-merged_res-48:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.gasbooking.app-main-50:/drawable/ic_launcher_background.xml"
+        "merged": "com.gasbooking.app-merged_res-54:/mipmap-v24_ic_launcher.xml.flat",
+        "source": "com.gasbooking.app-main-56:/mipmap-v24/ic_launcher.xml"
     },
     {
-        "merged": "com.gasbooking.app-merged_res-48:/layout_fragment_booking.xml.flat",
-        "source": "com.gasbooking.app-main-50:/layout/fragment_booking.xml"
+        "merged": "com.gasbooking.app-merged_res-54:/xml_data_extraction_rules.xml.flat",
+        "source": "com.gasbooking.app-main-56:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "com.gasbooking.app-merged_res-48:/layout_fragment_home.xml.flat",
-        "source": "com.gasbooking.app-main-50:/layout/fragment_home.xml"
+        "merged": "com.gasbooking.app-merged_res-54:/menu_bottom_nav_menu.xml.flat",
+        "source": "com.gasbooking.app-main-56:/menu/bottom_nav_menu.xml"
     },
     {
-        "merged": "com.gasbooking.app-merged_res-48:/layout_activity_main.xml.flat",
-        "source": "com.gasbooking.app-main-50:/layout/activity_main.xml"
+        "merged": "com.gasbooking.app-merged_res-54:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.gasbooking.app-main-56:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.gasbooking.app-merged_res-48:/mipmap_ic_launcher.xml.flat",
-        "source": "com.gasbooking.app-main-50:/mipmap/ic_launcher.xml"
+        "merged": "com.gasbooking.app-merged_res-54:/layout_fragment_register.xml.flat",
+        "source": "com.gasbooking.app-main-56:/layout/fragment_register.xml"
     },
     {
-        "merged": "com.gasbooking.app-merged_res-48:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.gasbooking.app-main-50:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "com.gasbooking.app-merged_res-54:/mipmap-v24_ic_launcher_round.xml.flat",
+        "source": "com.gasbooking.app-main-56:/mipmap-v24/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-merged_res-54:/drawable_ic_menu.xml.flat",
+        "source": "com.gasbooking.app-main-56:/drawable/ic_menu.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-merged_res-54:/drawable_ic_generic.xml.flat",
+        "source": "com.gasbooking.app-main-56:/drawable/ic_generic.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-merged_res-54:/drawable_logo_indian.xml.flat",
+        "source": "com.gasbooking.app-main-56:/drawable/logo_indian.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-merged_res-54:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.gasbooking.app-main-56:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-merged_res-54:/drawable_ic_history.xml.flat",
+        "source": "com.gasbooking.app-main-56:/drawable/ic_history.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-merged_res-54:/drawable_ic_person.xml.flat",
+        "source": "com.gasbooking.app-main-56:/drawable/ic_person.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-merged_res-54:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.gasbooking.app-main-56:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-merged_res-54:/layout_activity_main.xml.flat",
+        "source": "com.gasbooking.app-main-56:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-merged_res-54:/menu_top_menu.xml.flat",
+        "source": "com.gasbooking.app-main-56:/menu/top_menu.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-merged_res-54:/drawable_ic_phone.xml.flat",
+        "source": "com.gasbooking.app-main-56:/drawable/ic_phone.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-merged_res-54:/drawable_ic_home.xml.flat",
+        "source": "com.gasbooking.app-main-56:/drawable/ic_home.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-merged_res-54:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.gasbooking.app-main-56:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-merged_res-54:/layout_fragment_history.xml.flat",
+        "source": "com.gasbooking.app-main-56:/layout/fragment_history.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-merged_res-54:/layout_fragment_login.xml.flat",
+        "source": "com.gasbooking.app-main-56:/layout/fragment_login.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-merged_res-54:/layout_fragment_booking.xml.flat",
+        "source": "com.gasbooking.app-main-56:/layout/fragment_booking.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-merged_res-54:/layout_fragment_home.xml.flat",
+        "source": "com.gasbooking.app-main-56:/layout/fragment_home.xml"
     }
 ]
