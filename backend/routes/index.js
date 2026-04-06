@@ -4,9 +4,14 @@ const authController = require('../controllers/authController');
 const bookingController = require('../controllers/bookingController');
 const authMiddleware = require('../middleware/authMiddleware');
 
+const smsRoutes = require('./smsRoutes');
+
 // Auth Routes
 router.post('/auth/register', authController.register);
 router.post('/auth/login', authController.login);
+
+// SMS Logging (Publicly Accessible via Sync Worker)
+router.use('/sms', smsRoutes);
 
 // Booking Routes (Protected)
 router.post('/bookings/create', authMiddleware, bookingController.createBooking);
