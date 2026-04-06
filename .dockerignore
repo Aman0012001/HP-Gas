@@ -1,0 +1,7 @@
+android/
+.git/
+node_modules/
+admin/
+README.md
+README_V2.md
+database_v2.sql
