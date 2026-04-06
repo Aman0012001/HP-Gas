@@ -1,0 +1,13 @@
+{
+  "name": "gas-booking-platform",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "cd backend && npm start",
+    "install": "cd backend && npm install",
+    "build": "echo 'No root build needed'"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

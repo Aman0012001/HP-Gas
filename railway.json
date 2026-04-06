@@ -5,8 +5,8 @@
   },
   "deploy": {
     "numReplicas": 1,
-    "serviceName": "gas-booking-api",
     "restartPolicyType": "ON_FAILURE",
-    "root": "backend"
+    "root": "backend",
+    "serviceName": "HP-Gas"
   }
 }
