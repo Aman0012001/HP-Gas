@@ -1,0 +1,173 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.gasbooking.app"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+9        android:targetSdkVersion="34" />
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->E:\hp booking\android\app\src\main\AndroidManifest.xml:6:5-67
+11-->E:\hp booking\android\app\src\main\AndroidManifest.xml:6:22-64
+12    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+12-->E:\hp booking\android\app\src\main\AndroidManifest.xml:7:5-70
+12-->E:\hp booking\android\app\src\main\AndroidManifest.xml:7:22-67
+13    <uses-permission android:name="android.permission.READ_SMS" />
+13-->E:\hp booking\android\app\src\main\AndroidManifest.xml:8:5-67
+13-->E:\hp booking\android\app\src\main\AndroidManifest.xml:8:22-64
+14
+15    <permission
+15-->[androidx.core:core:1.10.1] C:\Users\amanj\.gradle\caches\transforms-3\c0d37bf114aaa59a11ef81afadbb9a2a\transformed\core-1.10.1\AndroidManifest.xml:22:5-24:47
+16        android:name="com.gasbooking.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+16-->[androidx.core:core:1.10.1] C:\Users\amanj\.gradle\caches\transforms-3\c0d37bf114aaa59a11ef81afadbb9a2a\transformed\core-1.10.1\AndroidManifest.xml:23:9-81
+17        android:protectionLevel="signature" />
+17-->[androidx.core:core:1.10.1] C:\Users\amanj\.gradle\caches\transforms-3\c0d37bf114aaa59a11ef81afadbb9a2a\transformed\core-1.10.1\AndroidManifest.xml:24:9-44
+18
+19    <uses-permission android:name="com.gasbooking.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+19-->[androidx.core:core:1.10.1] C:\Users\amanj\.gradle\caches\transforms-3\c0d37bf114aaa59a11ef81afadbb9a2a\transformed\core-1.10.1\AndroidManifest.xml:26:5-97
+19-->[androidx.core:core:1.10.1] C:\Users\amanj\.gradle\caches\transforms-3\c0d37bf114aaa59a11ef81afadbb9a2a\transformed\core-1.10.1\AndroidManifest.xml:26:22-94
+20
+21    <application
+21-->E:\hp booking\android\app\src\main\AndroidManifest.xml:10:5-40:19
+22        android:allowBackup="true"
+22-->E:\hp booking\android\app\src\main\AndroidManifest.xml:11:9-35
+23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+23-->[androidx.core:core:1.10.1] C:\Users\amanj\.gradle\caches\transforms-3\c0d37bf114aaa59a11ef81afadbb9a2a\transformed\core-1.10.1\AndroidManifest.xml:28:18-86
+24        android:dataExtractionRules="@xml/data_extraction_rules"
+24-->E:\hp booking\android\app\src\main\AndroidManifest.xml:12:9-65
+25        android:debuggable="true"
+26        android:extractNativeLibs="false"
+27        android:fullBackupContent="@xml/backup_rules"
+27-->E:\hp booking\android\app\src\main\AndroidManifest.xml:13:9-54
+28        android:icon="@mipmap/ic_launcher"
+28-->E:\hp booking\android\app\src\main\AndroidManifest.xml:14:9-43
+29        android:label="Gas Booking"
+29-->E:\hp booking\android\app\src\main\AndroidManifest.xml:15:9-36
+30        android:roundIcon="@mipmap/ic_launcher_round"
+30-->E:\hp booking\android\app\src\main\AndroidManifest.xml:16:9-54
+31        android:supportsRtl="true"
+31-->E:\hp booking\android\app\src\main\AndroidManifest.xml:17:9-35
+32        android:theme="@style/Theme.GasBooking" >
+32-->E:\hp booking\android\app\src\main\AndroidManifest.xml:18:9-48
+33        <receiver
+33-->E:\hp booking\android\app\src\main\AndroidManifest.xml:21:9-29:20
+34            android:name="com.gasbooking.app.receiver.SMSReceiver"
+34-->E:\hp booking\android\app\src\main\AndroidManifest.xml:22:13-49
+35            android:enabled="true"
+35-->E:\hp booking\android\app\src\main\AndroidManifest.xml:23:13-35
+36            android:exported="true"
+36-->E:\hp booking\android\app\src\main\AndroidManifest.xml:24:13-36
+37            android:permission="android.permission.BROADCAST_SMS" >
+37-->E:\hp booking\android\app\src\main\AndroidManifest.xml:25:13-66
+38            <intent-filter android:priority="999" >
+38-->E:\hp booking\android\app\src\main\AndroidManifest.xml:26:13-28:29
+38-->E:\hp booking\android\app\src\main\AndroidManifest.xml:26:28-50
+39                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+39-->E:\hp booking\android\app\src\main\AndroidManifest.xml:27:17-82
+39-->E:\hp booking\android\app\src\main\AndroidManifest.xml:27:25-79
+40            </intent-filter>
+41        </receiver>
+42
+43        <activity
+43-->E:\hp booking\android\app\src\main\AndroidManifest.xml:31:9-39:20
+44            android:name="com.gasbooking.app.MainActivity"
+44-->E:\hp booking\android\app\src\main\AndroidManifest.xml:32:13-41
+45            android:exported="true"
+45-->E:\hp booking\android\app\src\main\AndroidManifest.xml:33:13-36
+46            android:theme="@style/Theme.GasBooking" >
+46-->E:\hp booking\android\app\src\main\AndroidManifest.xml:34:13-52
+47            <intent-filter>
+47-->E:\hp booking\android\app\src\main\AndroidManifest.xml:35:13-38:29
+48                <action android:name="android.intent.action.MAIN" />
+48-->E:\hp booking\android\app\src\main\AndroidManifest.xml:36:17-69
+48-->E:\hp booking\android\app\src\main\AndroidManifest.xml:36:25-66
+49
+50                <category android:name="android.intent.category.LAUNCHER" />
+50-->E:\hp booking\android\app\src\main\AndroidManifest.xml:37:17-77
+50-->E:\hp booking\android\app\src\main\AndroidManifest.xml:37:27-74
+51            </intent-filter>
+52        </activity>
+53
+54        <provider
+54-->[androidx.emoji2:emoji2:1.2.0] C:\Users\amanj\.gradle\caches\transforms-3\c4dab8d1a445d82bbdf5c45e5c471e0a\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+55            android:name="androidx.startup.InitializationProvider"
+55-->[androidx.emoji2:emoji2:1.2.0] C:\Users\amanj\.gradle\caches\transforms-3\c4dab8d1a445d82bbdf5c45e5c471e0a\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+56            android:authorities="com.gasbooking.app.androidx-startup"
+56-->[androidx.emoji2:emoji2:1.2.0] C:\Users\amanj\.gradle\caches\transforms-3\c4dab8d1a445d82bbdf5c45e5c471e0a\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+57            android:exported="false" >
+57-->[androidx.emoji2:emoji2:1.2.0] C:\Users\amanj\.gradle\caches\transforms-3\c4dab8d1a445d82bbdf5c45e5c471e0a\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+58            <meta-data
+58-->[androidx.emoji2:emoji2:1.2.0] C:\Users\amanj\.gradle\caches\transforms-3\c4dab8d1a445d82bbdf5c45e5c471e0a\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+59                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+59-->[androidx.emoji2:emoji2:1.2.0] C:\Users\amanj\.gradle\caches\transforms-3\c4dab8d1a445d82bbdf5c45e5c471e0a\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+60                android:value="androidx.startup" />
+60-->[androidx.emoji2:emoji2:1.2.0] C:\Users\amanj\.gradle\caches\transforms-3\c4dab8d1a445d82bbdf5c45e5c471e0a\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+61            <meta-data
+61-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\amanj\.gradle\caches\transforms-3\2a5ec290ff81ffbf7dee3dfd3c1a1e9b\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
+62                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+62-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\amanj\.gradle\caches\transforms-3\2a5ec290ff81ffbf7dee3dfd3c1a1e9b\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
+63                android:value="androidx.startup" />
+63-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\amanj\.gradle\caches\transforms-3\2a5ec290ff81ffbf7dee3dfd3c1a1e9b\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
+64            <meta-data
+64-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\amanj\.gradle\caches\transforms-3\4fe9f85f1db47f470d7a1d0e318b4ef2\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+65                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+65-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\amanj\.gradle\caches\transforms-3\4fe9f85f1db47f470d7a1d0e318b4ef2\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+66                android:value="androidx.startup" />
+66-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\amanj\.gradle\caches\transforms-3\4fe9f85f1db47f470d7a1d0e318b4ef2\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+67        </provider>
+68
+69        <uses-library
+69-->[androidx.window:window:1.0.0] C:\Users\amanj\.gradle\caches\transforms-3\a0cfd5d38e173ce81d4a85d58b83fb43\transformed\jetified-window-1.0.0\AndroidManifest.xml:25:9-27:40
+70            android:name="androidx.window.extensions"
+70-->[androidx.window:window:1.0.0] C:\Users\amanj\.gradle\caches\transforms-3\a0cfd5d38e173ce81d4a85d58b83fb43\transformed\jetified-window-1.0.0\AndroidManifest.xml:26:13-54
+71            android:required="false" />
+71-->[androidx.window:window:1.0.0] C:\Users\amanj\.gradle\caches\transforms-3\a0cfd5d38e173ce81d4a85d58b83fb43\transformed\jetified-window-1.0.0\AndroidManifest.xml:27:13-37
+72        <uses-library
+72-->[androidx.window:window:1.0.0] C:\Users\amanj\.gradle\caches\transforms-3\a0cfd5d38e173ce81d4a85d58b83fb43\transformed\jetified-window-1.0.0\AndroidManifest.xml:28:9-30:40
+73            android:name="androidx.window.sidecar"
+73-->[androidx.window:window:1.0.0] C:\Users\amanj\.gradle\caches\transforms-3\a0cfd5d38e173ce81d4a85d58b83fb43\transformed\jetified-window-1.0.0\AndroidManifest.xml:29:13-51
+74            android:required="false" />
+74-->[androidx.window:window:1.0.0] C:\Users\amanj\.gradle\caches\transforms-3\a0cfd5d38e173ce81d4a85d58b83fb43\transformed\jetified-window-1.0.0\AndroidManifest.xml:30:13-37
+75
+76        <receiver
+76-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\amanj\.gradle\caches\transforms-3\4fe9f85f1db47f470d7a1d0e318b4ef2\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+77            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+77-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\amanj\.gradle\caches\transforms-3\4fe9f85f1db47f470d7a1d0e318b4ef2\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+78            android:directBootAware="false"
+78-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\amanj\.gradle\caches\transforms-3\4fe9f85f1db47f470d7a1d0e318b4ef2\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+79            android:enabled="true"
+79-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\amanj\.gradle\caches\transforms-3\4fe9f85f1db47f470d7a1d0e318b4ef2\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+80            android:exported="true"
+80-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\amanj\.gradle\caches\transforms-3\4fe9f85f1db47f470d7a1d0e318b4ef2\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+81            android:permission="android.permission.DUMP" >
+81-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\amanj\.gradle\caches\transforms-3\4fe9f85f1db47f470d7a1d0e318b4ef2\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+82            <intent-filter>
+82-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\amanj\.gradle\caches\transforms-3\4fe9f85f1db47f470d7a1d0e318b4ef2\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+83                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+83-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\amanj\.gradle\caches\transforms-3\4fe9f85f1db47f470d7a1d0e318b4ef2\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+83-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\amanj\.gradle\caches\transforms-3\4fe9f85f1db47f470d7a1d0e318b4ef2\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+84            </intent-filter>
+85            <intent-filter>
+85-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\amanj\.gradle\caches\transforms-3\4fe9f85f1db47f470d7a1d0e318b4ef2\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+86                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+86-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\amanj\.gradle\caches\transforms-3\4fe9f85f1db47f470d7a1d0e318b4ef2\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+86-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\amanj\.gradle\caches\transforms-3\4fe9f85f1db47f470d7a1d0e318b4ef2\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+87            </intent-filter>
+88            <intent-filter>
+88-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\amanj\.gradle\caches\transforms-3\4fe9f85f1db47f470d7a1d0e318b4ef2\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+89                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+89-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\amanj\.gradle\caches\transforms-3\4fe9f85f1db47f470d7a1d0e318b4ef2\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+89-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\amanj\.gradle\caches\transforms-3\4fe9f85f1db47f470d7a1d0e318b4ef2\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+90            </intent-filter>
+91            <intent-filter>
+91-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\amanj\.gradle\caches\transforms-3\4fe9f85f1db47f470d7a1d0e318b4ef2\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+92                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+92-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\amanj\.gradle\caches\transforms-3\4fe9f85f1db47f470d7a1d0e318b4ef2\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+92-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\amanj\.gradle\caches\transforms-3\4fe9f85f1db47f470d7a1d0e318b4ef2\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+93            </intent-filter>
+94        </receiver>
+95    </application>
+96
+97</manifest>

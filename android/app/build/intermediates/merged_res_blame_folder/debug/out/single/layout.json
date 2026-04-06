@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "com.gasbooking.app-mergeDebugResources-47:/layout/fragment_home.xml",
+        "source": "com.gasbooking.app-main-50:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-mergeDebugResources-47:/layout/activity_main.xml",
+        "source": "com.gasbooking.app-main-50:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-mergeDebugResources-47:/layout/fragment_booking.xml",
+        "source": "com.gasbooking.app-main-50:/layout/fragment_booking.xml"
+    }
+]

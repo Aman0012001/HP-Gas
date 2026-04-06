@@ -1,0 +1,54 @@
+[
+    {
+        "merged": "com.gasbooking.app-merged_res-48:/navigation_nav_graph.xml.flat",
+        "source": "com.gasbooking.app-main-50:/navigation/nav_graph.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-merged_res-48:/mipmap_ic_launcher_round.xml.flat",
+        "source": "com.gasbooking.app-main-50:/mipmap/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-merged_res-48:/xml_data_extraction_rules.xml.flat",
+        "source": "com.gasbooking.app-main-50:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-merged_res-48:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.gasbooking.app-main-50:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-merged_res-48:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.gasbooking.app-main-50:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-merged_res-48:/xml_backup_rules.xml.flat",
+        "source": "com.gasbooking.app-main-50:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-merged_res-48:/menu_bottom_nav_menu.xml.flat",
+        "source": "com.gasbooking.app-main-50:/menu/bottom_nav_menu.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-merged_res-48:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.gasbooking.app-main-50:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-merged_res-48:/layout_fragment_booking.xml.flat",
+        "source": "com.gasbooking.app-main-50:/layout/fragment_booking.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-merged_res-48:/layout_fragment_home.xml.flat",
+        "source": "com.gasbooking.app-main-50:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-merged_res-48:/layout_activity_main.xml.flat",
+        "source": "com.gasbooking.app-main-50:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-merged_res-48:/mipmap_ic_launcher.xml.flat",
+        "source": "com.gasbooking.app-main-50:/mipmap/ic_launcher.xml"
+    },
+    {
+        "merged": "com.gasbooking.app-merged_res-48:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.gasbooking.app-main-50:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    }
+]
