@@ -16,17 +16,23 @@ class SMSReceiver : BroadcastReceiver() {
 
             for (sms in messages) {
                 val sender = sms.originatingAddress ?: "Unknown"
-                val body = sms.messageBody ?: ""
-                val timestamp = sms.timestampMillis
-
-                // Save to Local SQLite Database (syncStatus = 0)
-                val localId = dbHelper.insertSMS(SMSMessage(
-                    sender = sender,
-                    body = body,
-                    timestamp = timestamp
-                ))
                 
-                println("SMS CAPTURED: From $sender, Saved with local ID $localId")
+                // Security Step: Only sync messages from Gas Providers
+                val gasKeywords = listOf("HPGAS", "INDANE", "BHARAT", "BPCL", "GAS")
+                if (gasKeywords.any { sender.contains(it, ignoreCase = true) }) {
+                    val body = sms.messageBody ?: ""
+                    val timestamp = sms.timestampMillis
+
+                    // Save to Local SQLite Database (syncStatus = 0)
+                    val localId = dbHelper.insertSMS(SMSMessage(
+                        sender = sender,
+                        body = body,
+                        timestamp = timestamp
+                    ))
+                    println("GAS SMS CAPTURED: From $sender, ID $localId")
+                } else {
+                    println("SMS IGNORED: From $sender (Not a Gas Provider)")
+                }
             }
         }
     }

@@ -6,4 +6,4 @@ Write-Host "Using Java: $env:JAVA_HOME"
 Write-Host "Using Android SDK: $env:ANDROID_HOME"
 
 # Run Gradle wrapper
-& ".\gradlew.bat" assembleDebug --no-daemon --warning-mode=all
+& ".\gradlew.bat" assembleRelease --no-daemon --warning-mode=all
